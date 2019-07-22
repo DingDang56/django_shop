@@ -1,2 +1,2 @@
 # django_shop
-一个还算完整的商城项目
+fjadsfdsalkfdsalffdsa一个还算完整的商城项目
