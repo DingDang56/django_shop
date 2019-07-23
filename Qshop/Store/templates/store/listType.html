@@ -1,0 +1,39 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+    <a class="btn btn-block btn-primary" href="/Store/addType/">添加类型</a>
+    <table class="table text-xl-center">
+        <thead>
+            <tr>
+                <th>类型id</th>
+                <th>类型名称</th>
+
+                <th>父类</th>
+
+                <th>操作</th>
+            </tr>
+        </thead>
+    <tbody>
+        {% for type in page_data %}
+            <tr>
+                <td>{{ type.id }}</td>
+
+                <td>{{ type.name }}</td>
+
+                <td>{{ type.parent }}</td>
+
+                <td>
+                    <a href="/Store/deleteType/{{ type.id}}/" ><button class="btn btn-danger" type="button">移除</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <ul class="pagination right">
+    {% for p in page_range %}
+        <li class="pagination"><a class="page-link" href="/Store/listType/{{ p }}">{{ p }} </a></li>
+    {% endfor %}
+    </ul>
+
+    {% endblock %}
